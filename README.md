@@ -1,0 +1,2 @@
+# hugo-automation
+demo
