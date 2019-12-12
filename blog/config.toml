@@ -1,6 +1,6 @@
 baseURL = "https://pcme.info/hugo-automation/"
 languageCode = "en-us"
-title = "Hugo Automation Demo Site"
+title = "Hugo Automation Demo Site 3"
 # theme = "ananke"
 theme = "bootstrap4-blog"
 

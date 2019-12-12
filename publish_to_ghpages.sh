@@ -58,17 +58,17 @@ git_msg="Publishing to gh-pages $(date) (publish_to_ghpages.sh) "
 
 #env vars -> https://help.github.com/en/actions/automating-your-workflow-with-github-actions/using-environment-variables
 if [ "$GITHUB_ACTIONS" = "true" ]; then
-    git_msg = "$git_msg - Powered By GitHub Actions"
+    git_msg="${git_msg} - Powered By GitHub Actions"
     #ref: https://github.com/ad-m/github-push-action/blob/master/start.sh 
     remote_repo="https://${GITHUB_ACTOR}:${secrets.GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
 fi
 
-printf "${YELLOW}Updating gh-pages branch${NOCOLOR}\n"
+printf "${GREEN}Updating gh-pages branch${NOCOLOR}\n"
 cd public && git add --all && git commit -m "$git_msg"
 
 #echo "Pushing to github"
 #git push --all
 # git push origin gh-pages
-echo git push "${remote_repo}" gh-pages
+git push "${remote_repo}" gh-pages
 
 printf "${GREEN}Done${NOCOLOR}\n"
