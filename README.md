@@ -25,20 +25,14 @@ sudo ./hugow install
 ## deploy
 
 ```bash
+# init branch first time
 git checkout --orphan gh-pages
 git reset --hard
 git commit --allow-empty -m "Initializing gh-pages branch"
 git push origin gh-pages  # upstream -> origin
 git checkout master
 
-#--- 
+# push
 ./publish_to_ghpages.sh
-
-cd blog
-rm -rf public
-git worktree add -B gh-pages public origin/gh-pages
-hugo
-cd public && git add --all && git commit -m "Publishing to gh-pages $(date)" && cd ..
-git push origin gh-pages
 
 ```

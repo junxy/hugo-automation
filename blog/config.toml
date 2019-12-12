@@ -1,4 +1,7 @@
-baseURL = "http://example.org/"
+baseURL = "https://pcme.info/hugo-automation/"
 languageCode = "en-us"
-title = "My New Hugo Site"
+title = "Hugo Automation Demo Site"
 theme = "ananke"
+
+enableRobotsTXT = false
+enableGitInfo = true
