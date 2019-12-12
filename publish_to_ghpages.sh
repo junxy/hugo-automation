@@ -57,4 +57,4 @@ cd public && git add --all && git commit -m "Publishing to gh-pages $(date) (pub
 
 #echo "Pushing to github"
 #git push --all
-git push origin gh-pages
+# git push origin gh-pages

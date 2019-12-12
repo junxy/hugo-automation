@@ -11,6 +11,8 @@ cd blog
 # git init
 # git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke
 # echo 'theme = "ananke"' >> config.toml
+# git submodule add https://github.com/alanorth/hugo-theme-bootstrap4-blog.git themes/bootstrap4-blog
+
 
 ## preview
 ./hugow serve -D
