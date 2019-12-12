@@ -3,15 +3,26 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://example.org/categories/</loc>
+    <loc>https://pcme.info/hugo-automation/posts/my-first-post/</loc>
+    <lastmod>2019-12-12T17:21:45+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://example.org/</loc>
+    <loc>https://pcme.info/hugo-automation/</loc>
+    <lastmod>2019-12-12T17:21:45+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://example.org/tags/</loc>
+    <loc>https://pcme.info/hugo-automation/posts/</loc>
+    <lastmod>2019-12-12T17:21:45+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pcme.info/hugo-automation/categories/</loc>
+  </url>
+  
+  <url>
+    <loc>https://pcme.info/hugo-automation/tags/</loc>
   </url>
   
 </urlset>
