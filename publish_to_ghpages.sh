@@ -24,7 +24,7 @@ LIGHTCYAN='\033[1;36m'
 WHITE='\033[1;37m'
 
 # If a command fails then the deploy stops
-set -e
+# set -e
 
 cd $SCRIPTPATH/blog
 
@@ -75,3 +75,5 @@ cd public && git add --all && git commit -m "$git_msg"
 git push "${remote_repo}" gh-pages
 
 printf "${GREEN}Done${NOCOLOR}\n"
+
+exit 0
