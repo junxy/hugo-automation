@@ -23,4 +23,5 @@ jobs:
         run: |
           hugo version
           ./publish_to_ghpages.sh
+          git branch -a
         if: github.ref == 'refs/heads/master'
