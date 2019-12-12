@@ -21,3 +21,23 @@ cd blog
 ## install hugo to system -> (/usr/local/bin/hugo) then gen autocomplete
 sudo ./hugow install
 ```
+
+## deploy
+
+```bash
+git checkout --orphan gh-pages
+git reset --hard
+git commit --allow-empty -m "Initializing gh-pages branch"
+git push upstream gh-pages
+git checkout master
+
+cd blog
+rm -rf public
+git worktree add -B gh-pages public upstream/gh-pages
+
+hugo
+cd public && git add --all && git commit -m "Publishing to gh-pages" && cd ..
+
+git push upstream gh-pages
+
+```
