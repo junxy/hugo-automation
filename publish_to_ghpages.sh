@@ -60,7 +60,7 @@ git_msg="Publishing to gh-pages $(date) (publish_to_ghpages.sh) "
 if [ "$GITHUB_ACTIONS" = "true" ]; then
     git_msg="${git_msg} - Powered By GitHub Actions"
     #ref: https://github.com/ad-m/github-push-action/blob/master/start.sh 
-    remote_repo="https://${GITHUB_ACTOR}:${secrets.GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+    remote_repo="https://${GITHUB_ACTOR}:${passowrd}@github.com/${GITHUB_REPOSITORY}.git"
 fi
 
 printf "${GREEN}Updating gh-pages branch${NOCOLOR}\n"

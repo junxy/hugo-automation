@@ -17,6 +17,9 @@ jobs:
       - name: Run a one-line script
         run: echo Hello, world!
       - name: Deploy Hugo To Github Pages
+        with:
+          # username: ${{ GITHUB_ACTOR }}
+          passowrd: ${{ secrets.GITHUB_TOKEN }}
         run: |
           hugo version
           ./publish_to_ghpages.sh 
