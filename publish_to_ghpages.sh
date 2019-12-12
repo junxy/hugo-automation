@@ -61,6 +61,9 @@ if [ "$GITHUB_ACTIONS" = "true" ]; then
     git_msg="${git_msg} - Powered By GitHub Actions"
     #ref: https://github.com/ad-m/github-push-action/blob/master/start.sh 
     remote_repo="https://${GITHUB_ACTOR}:${passowrd}@github.com/${GITHUB_REPOSITORY}.git"
+
+    [ ! `git config --get user.nam` ] && git config --global user.name "${GITHUB_ACTOR}"
+    [ ! `git config --get user.nam` ] && git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
 fi
 
 printf "${GREEN}Updating gh-pages branch${NOCOLOR}\n"
