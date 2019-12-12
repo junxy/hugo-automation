@@ -2,25 +2,31 @@
 
 #ref: https://github.com/takari/maven-wrapper/blob/master/mvnw
 
+SCRIPT=$(readlink -f $0)
+SCRIPTPATH=`dirname $SCRIPT`
+# echo $SCRIPTPATH
+
 HugoVer="0.61.0"
 HugoUrl="https://github.com/gohugoio/hugo/releases/download/v${HugoVer}/hugo_${HugoVer}_Linux-64bit.tar.gz"
-CachePath=".hugo/Cache/"
+CachePath="${SCRIPTPATH}/.hugo/Cache/"
 HugoPkg="${CachePath}/hugo_${HugoVer}.tar.gz"
-HugoExe=".hugo/hugo"
+HugoExe="${SCRIPTPATH}/.hugo/hugo"
 P=$@
 
-[ "$1" = 'redown' ] && (rm -f $HugoExe; rm -rf $CachePath; echo 'clean...')
+[ "$1" = 'redown' ] && (rm $HugoExe; rm $CachePath/**; echo 'clean...')
 
 if command -v curl > /dev/null; then
     # echo "Found curl ... using curl"
     if [ ! -f $HugoExe ]; then
         mkdir -p $CachePath
         [ -f $HugoPkg ] || curl -L $HugoUrl -o $HugoPkg
-        tar xzf $HugoPkg -C $CachePath && mv $CachePath/hugo $HugoExe && chmod +x $HugoExe && rm -rf $CachePath
-        ./$HugoExe version
+        tar xzf $HugoPkg -C $CachePath && mv $CachePath/hugo $HugoExe && chmod +x $HugoExe && rm $CachePath/** rm -r $CachePath
+        $HugoExe version
     fi
 else
     echo "Not found curl ... please install curl first"
 fi
 
-[ "$1" = 'redown' ] || ./$HugoExe $P
+([ "$1" = 'redown' ] || [ "$1" = 'install' ]) || $HugoExe $P
+
+[ "$1" = 'install' ] && (echo 'install to system...'; cp $HugoExe /usr/local/bin/hugo && /usr/local/bin/hugo gen autocomplete && echo "reload: source ~/.bashrc" )
