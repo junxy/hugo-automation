@@ -19,7 +19,10 @@ jobs:
       - name: Deploy Hugo To Github Pages
         env:
           # username: ${{ GITHUB_ACTOR }}
-          passowrd: ${{ secrets.GITHUB_TOKEN }}
+          # issue --> https://github.community/t5/GitHub-Actions/Github-action-not-triggering-gh-pages-upon-push/td-p/26869
+          # https://github.com/benmatselby/hugo-deploy-gh-pages#secrets
+          # passowrd: ${{ secrets.GITHUB_TOKEN }}
+          passowrd: ${{ secrets.TOKEN }}
         run: |
           hugo version
           ./publish_to_ghpages.sh
