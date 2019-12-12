@@ -12,13 +12,12 @@
     
     
     <item>
-      <title>My First Post</title>
+      <title>文章标题</title>
       <link>https://pcme.info/hugo-automation/posts/my-first-post/</link>
       <pubDate>Thu, 12 Dec 2019 17:21:45 +0800</pubDate>
       
       <guid>https://pcme.info/hugo-automation/posts/my-first-post/</guid>
-      <description>hello world 哈哈 😀
-demo</description>
+      <description>hello world 哈哈 😀 demo</description>
     </item>
     
   </channel>
