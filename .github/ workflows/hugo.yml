@@ -1,0 +1,26 @@
+name: DeployHugo
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Hugo setup
+        uses: peaceiris/actions-hugo@v2.3.1
+        #with:
+        # The Hugo version to download (if necessary) and use. Example: 0.58.2
+        #hugo-version: # optional, default is latest
+        # Download (if necessary) and use Hugo extended version. Example: true
+        #extended: # optional, default is false
+      - name: Run a one-line script
+        run: echo Hello, world!
+      - name: Run a multi-line script
+        run: |
+          echo Add other actions to build,
+          echo test, and deploy your project.
+          ls -al blog/themes/
+          ls -al blog/themes/ananke/
+          hugo version
+        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/develop'
