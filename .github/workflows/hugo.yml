@@ -6,7 +6,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      #ref --> https://github.com/actions/checkout/tree/releases/v1
       - uses: actions/checkout@v1
+        with:
+          submodules: recursive
       - name: Hugo setup
         uses: peaceiris/actions-hugo@v2.3.1
         #with:
